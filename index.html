@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-US">
+
 <head>
   <meta charset="utf-8">
   <link rel="preconnect" crossorigin href="https://fonts.googleapis.com">
@@ -35,12 +36,17 @@
   <link rel="preload" href="./build.js" as="script" />
   <link rel="preload" href="./build-haxcms.js" as="script" />
   <link rel="preload" href="./wc-registry.json" as="fetch" crossorigin="anonymous" />
-  <link rel="preload" href="./build/es6/node_modules/@haxtheweb/dynamic-import-registry/dynamic-import-registry.js" as="script" crossorigin="anonymous" />
-  <link rel="modulepreload" href="./build/es6/node_modules/@haxtheweb/dynamic-import-registry/dynamic-import-registry.js" />
-  <link rel="preload" href="./build/es6/node_modules/@haxtheweb/wc-autoload/wc-autoload.js" as="script" crossorigin="anonymous" />
+  <link rel="preload" href="./build/es6/node_modules/@haxtheweb/dynamic-import-registry/dynamic-import-registry.js"
+    as="script" crossorigin="anonymous" />
+  <link rel="modulepreload"
+    href="./build/es6/node_modules/@haxtheweb/dynamic-import-registry/dynamic-import-registry.js" />
+  <link rel="preload" href="./build/es6/node_modules/@haxtheweb/wc-autoload/wc-autoload.js" as="script"
+    crossorigin="anonymous" />
   <link rel="modulepreload" href="./build/es6/node_modules/@haxtheweb/wc-autoload/wc-autoload.js" />
-  <link rel="preload" href="./build/es6/node_modules/@haxtheweb/haxcms-elements/lib/core/themes/haxcms-basic-theme.js" as="script" crossorigin="anonymous" />
-  <link rel="modulepreload" href="./build/es6/node_modules/@haxtheweb/haxcms-elements/lib/core/themes/haxcms-basic-theme.js" />
+  <link rel="preload" href="./build/es6/node_modules/@haxtheweb/haxcms-elements/lib/core/themes/haxcms-basic-theme.js"
+    as="script" crossorigin="anonymous" />
+  <link rel="modulepreload"
+    href="./build/es6/node_modules/@haxtheweb/haxcms-elements/lib/core/themes/haxcms-basic-theme.js" />
   <link rel="preload" href="./build/es6/node_modules/@haxtheweb/haxcms-elements/lib/base.css" as="style" />
   <meta name="generator" content="HAXcms">
   <link rel="manifest" href="manifest.json">
@@ -66,17 +72,40 @@
   <meta name="twitter:card" property="twitter:card" content="summary_large_image" />
   <meta name="twitter:description" property="twitter:description" content="" />
   <meta name="twitter:image" property="twitter:image" content="" />
-  <meta rel="cc:license" href="https://creativecommons.org/licenses/by-sa/4.0/" content="License: Creative Commons: Attribution Share a like"/>
-  
+  <meta rel="cc:license" href="https://creativecommons.org/licenses/by-sa/4.0/"
+    content="License: Creative Commons: Attribution Share a like" />
+
   <!-- Service worker disabled via settings -->
   <style>
+    :root,
+    html,
     body {
-      margin: 0;
-      min-height: 98vh;
+      /* margin: 0; */
+      max-width: 90%;
+      /* padding: 0; */
+      background-color: var(--ddd-accent-1);
+      margin: var(--ddd-spacing-2);
+      padding: var(--ddd-spacing-4);
     }
+
+    enhanced-pause-component {
+      display: block;
+      /* margin: auto; */
+      /* max-width: 100%; */
+      margin: var(--ddd-spacing-3);
+      padding: var(--ddd-spacing-8);
+      border: var(--ddd-border-s);
+      border-radius: var(--ddd-radius-m);
+    }
+
+    enhanced-pause-component:hover {
+      box-shadow: var(--ddd-boxShadow-sm);
+    }
+
     .use-modern-browser a {
       font-size: 22px;
     }
+
     .use-modern-browser {
       font-size: 22px;
       text-align: center;
@@ -87,9 +116,11 @@
     haxcms-site-builder {
       display: block;
     }
+
     body[no-js] haxcms-site-builder {
       display: none !important;
     }
+
     #loading {
       background-color: white;
       bottom: 0px;
@@ -107,8 +138,9 @@
       animation: fade-out .7s ease-in-out;
       animation-fill-mode: forwards;
     }
+
     #loading div.messaging {
-      color: rgba(255,255,255, 0.7);
+      color: rgba(255, 255, 255, 0.7);
       font-family: Roboto;
       left: 0px;
       margin-top: -75px;
@@ -125,38 +157,47 @@
       width: 100%;
       margin: auto;
     }
+
     .progress-line {
-      background-color: rgba(0,0,0, 0.05);
+      background-color: rgba(0, 0, 0, 0.05);
       display: -webkit-flex;
       display: flex;
       width: 30vw;
     }
+
     .progress-line:before {
       background-color: var(--simple-colors-default-theme--7, #FF2222);
       content: '';
       animation: running-progress 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
     }
+
     @keyframes running-progress {
       0% {
         margin-left: 0px;
         margin-right: 100%;
       }
+
       50% {
         margin-left: 25%;
         margin-right: 0%;
       }
+
       100% {
         margin-left: 100%;
-        margin-right: 0;HAXCMS
+        margin-right: 0;
+        HAXCMS
       }
     }
+
     @keyframes fade-out {
       0% {
         opacity: 1;
       }
+
       99% {
         opacity: 0;
       }
+
       100% {
         opacity: 0;
       }
@@ -164,22 +205,22 @@
   </style>
   <script id="loadingscript">
     globalThis.dataLayer = globalThis.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-    globalThis.addEventListener('haxcms-ready', function(e) {
+    globalThis.addEventListener('haxcms-ready', function (e) {
       var s = document.createElement('script');
       s.async = true;
       document.body.appendChild(s);
       // give the web components a second to build
-      setTimeout(function() {
-        setTimeout(function() {
+      setTimeout(function () {
+        setTimeout(function () {
           if (globalThis.HAXCMS.requestAvailability().store.getManifest()) {
-          var gaid = globalThis.HAXCMS.requestAvailability().store.getManifest().metadata.site.settings.gaID || null;
-          if (gaid) {
-            gtag('config', gaid);
-            s.src = `https://www.googletagmanager.com/gtag/js?id=${gaid}`;
+            var gaid = globalThis.HAXCMS.requestAvailability().store.getManifest().metadata.site.settings.gaID || null;
+            if (gaid) {
+              gtag('config', gaid);
+              s.src = `https://www.googletagmanager.com/gtag/js?id=${gaid}`;
+            }
           }
-        }
           document.querySelector('#loading').parentNode.removeChild(document.querySelector('#loading'));
           document.querySelector('#loadingstyles').parentNode.removeChild(document.querySelector('#loadingstyles'));
           document.querySelector('#loadingscript').parentNode.removeChild(document.querySelector('#loadingscript'));
@@ -188,9 +229,11 @@
     });
   </script>
 </head>
-<body no-js vocab="http://schema.org/" prefix="oer:http://oerschema.org cc:http://creativecommons.org/ns dc:http://purl.org/dc/terms/">
 
-  
+<body no-js vocab="http://schema.org/"
+  prefix="oer:http://oerschema.org cc:http://creativecommons.org/ns dc:http://purl.org/dc/terms/">
+
+
 
   <!-- <div id="loading">
     <div class="messaging">
@@ -200,7 +243,7 @@
   </div> -->
 
 
-<!-- 
+  <!-- 
   <haxcms-site-builder id="site" file="site.json?2GQKWcJ3ni0xrL2X4_Dw_Sr9SeXqY2Sk3XblmvHVArA1"></haxcms-site-builder> -->
 
 
@@ -257,9 +300,9 @@
 
 
 
-      <learning-component title="PENILAIAN" subtitle="TULIS 1" type="assessment" accent-color="red" data-hax-lock="data-hax-lock"
-        icon="lrn:assessment">
-        <p>Tulis manfaat portal password.google.com1</p>
+      <learning-component title="PENILAIAN" subtitle="TULIS 1" type="assessment" accent-color="red"
+        data-hax-lock="data-hax-lock" icon="lrn:assessment">
+        <p>Tulis manfaat portal https://passwords.google.com !</p>
       </learning-component>
 
 
@@ -308,8 +351,8 @@
         Untuk materi pada bab ini, kalian akan belajar metode analisis Diagram Ishikawa).</p>
 
 
-        <media-image source="./files/Decision-tree.webp" card="" citation="Diagram Ishikawa" accent-color="grey" size="wide"
-        offset="none"></media-image>
+      <media-image source="./files/Decision-tree.webp" card="" citation="Diagram Ishikawa" accent-color="grey"
+        size="wide" offset="none"></media-image>
 
 
 
@@ -408,9 +451,9 @@
 
     <div slot="content-3">
 
-      <media-image source="./files/Ishikawa_Fishbone_Diagram.svg.png" card="" citation="Diagram Ishikawa" accent-color="grey" size="wide"
-      offset="none"></media-image>
-      
+      <media-image source="./files/Ishikawa_Fishbone_Diagram.svg.png" card="" citation="Diagram Ishikawa"
+        accent-color="grey" size="wide" offset="none"></media-image>
+
       <br>
 
       <learning-component accent-color="orange" icon="hax:ticket" subtitle="DIAGRAM TULANG IKAN"
@@ -463,7 +506,8 @@
           diagram</em><span> </span>digunakan
         ketika kita ingin mengidentifikasi kemungkinan penyebab masalah dan terutama ketika
         sebuah<span> </span><em>team</em><span> </span>cenderung jatuh berpikir pada rutinitas
-        (Tague, 2005, p. 247).</p>
+        (Tague, 2005, p. 247).
+      </p>
       <p>
         Suatu tindakan dan langkah<span> </span><em>improvement</em><span> </span>akan lebih
         mudah dilakukan jika masalah dan akar&nbsp; penyebab masalah sudah ditemukan. Manfaat<span> </span><em>fishbone
@@ -723,7 +767,7 @@ accent-color=" grey" size="wide" offset="none"></media-image>
 
       <h4>Langkah 3: Menemukan sebab-sebab potensial dengan cara brainstorming</h4>
 
-      <media-image source="./files/fishbone-step-3.png" card="" citation="Langkah-langkah ke 3""
+      <media-image source="./files/fishbone-step-3.PNG" card="" citation="Langkah-langkah ke 3""
 accent-color=" grey" size="wide" offset="none"></media-image>
 
       <ul>
@@ -757,7 +801,8 @@ accent-color=" grey" size="wide" offset="none"></media-image>
         ikan.Seorang nasabah menerima email yang mengatasnamakan banknya, meminta untuk mengklik
         tautan dan memasukkan data pribadi, yang kemudian digunakan oleh penipu untuk mengakses
         rekening nasabah<span slot="question">Contoh masalah keamanan teknologi yang dapat dianalisis menggunakan
-          diagram tulang ikan.</span><span>Seorang nasabah menerima email yang mengatasnamakan banknya, meminta untuk mengklik tautan dan
+          diagram tulang ikan.</span><span>Seorang nasabah menerima email yang mengatasnamakan banknya, meminta untuk
+          mengklik tautan dan
           memasukkan data pribadi, yang kemudian digunakan oleh penipu untuk mengakses rekening nasabah
         </span>
       </self-check>
@@ -798,15 +843,15 @@ accent-color=" grey" size="wide" offset="none"></media-image>
         Transaksi Tak Terotorisasi: Transaksi yang dilakukan tanpa izin nasabah, seperti autodebet yang lupa dibatalkan.
       </p>
       <p>
-        <h5>
+      <h5>
 
-          Duri-Duri Kecil:
-        </h5>
+        Duri-Duri Kecil:
+      </h5>
 
-        Kesalahan Manusia: Kesalahan dalam memasukkan data oleh petugas bank.
-        Kelemahan Keamanan: Password yang mudah ditebak, penggunaan jaringan Wi-Fi publik yang tidak aman.
-        Kurangnya Informasi: Nasabah tidak memahami biaya-biaya yang dikenakan oleh bank.
-        Kegagalan Verifikasi: Proses verifikasi transaksi yang tidak ketat.
+      Kesalahan Manusia: Kesalahan dalam memasukkan data oleh petugas bank.
+      Kelemahan Keamanan: Password yang mudah ditebak, penggunaan jaringan Wi-Fi publik yang tidak aman.
+      Kurangnya Informasi: Nasabah tidak memahami biaya-biaya yang dikenakan oleh bank.
+      Kegagalan Verifikasi: Proses verifikasi transaksi yang tidak ketat.
       </p>
 
       <learning-component accent-color="red" type="assessment" subtitle="TULIS 8" title="Assessment"
@@ -823,19 +868,27 @@ accent-color=" grey" size="wide" offset="none"></media-image>
       <media-image source="./files/fishbone-step-4.PNG" card="" citation="Langkah 4" accent-color="grey" size="wide"
         offset="none"></media-image>
 
-        Dari contoh di atas, fishbone diagram dapat menemukan akar permasalahan, yaitu kabut oli selama ini dibersihkan dengan ditampung di bag plastik yang rentan robek dan selama tidak ada bag plastik ada kemungkinan oli menetes jika kran rusak, solusi bisa dengan menambahkan containment tray atau safety cabinet yang permanen menempel pada pipa.
+      Dari contoh di atas, fishbone diagram dapat menemukan akar permasalahan, yaitu kabut oli selama ini dibersihkan
+      dengan ditampung di bag plastik yang rentan robek dan selama tidak ada bag plastik ada kemungkinan oli menetes
+      jika kran rusak, solusi bisa dengan menambahkan containment tray atau safety cabinet yang permanen menempel pada
+      pipa.
 
-        <media-image source="./files/brainstrom.jpg" card="" citation="Kabut oli" accent-color="grey" size="wide"
+      <media-image source="./files/brainstrom.jpg" card="" citation="Kabut oli" accent-color="grey" size="wide"
         offset="none"></media-image>
 
-<p>
+      <p>
 
-  Jika masalah rumit dan waktunya memungkinkan, kita bisa meninggalkan fishbone diagram di dinding selama beberapa hari untuk membiarkan ide menetas dan membiarkan orang yang lalu lalang turut berkontribusi. Jika  fishbone diagram terlihat timpang atau sempit, kita bisa mengatur ulang fishbone diagram dengan kategori sebab utama yang berbeda. 
-</p>
-  <p>
-    
-  Kunci sukses fishbone diagram adalah terus bertanya “Mengapa?”, lihatlah diagram dan carilah pola tanpa banyak bicara, dan libatkan orang-orang di “grass root” yang terkait dengan masalah karena biasanya mereka lebih mengerti  permasalahan di lapangan.
-</p>
+        Jika masalah rumit dan waktunya memungkinkan, kita bisa meninggalkan fishbone diagram di dinding selama beberapa
+        hari untuk membiarkan ide menetas dan membiarkan orang yang lalu lalang turut berkontribusi. Jika fishbone
+        diagram terlihat timpang atau sempit, kita bisa mengatur ulang fishbone diagram dengan kategori sebab utama yang
+        berbeda.
+      </p>
+      <p>
+
+        Kunci sukses fishbone diagram adalah terus bertanya “Mengapa?”, lihatlah diagram dan carilah pola tanpa banyak
+        bicara, dan libatkan orang-orang di “grass root” yang terkait dengan masalah karena biasanya mereka lebih
+        mengerti permasalahan di lapangan.
+      </p>
 
 
       <ul>
@@ -852,14 +905,15 @@ accent-color=" grey" size="wide" offset="none"></media-image>
       </ul>
 
       <self-check accent-color="light-blue" title="DIAGRAM TULANG IKAN" image="./files/Diagram-Fishbone-produksi.webp"
-      alt="Penurunan Produksi" resource="#81619a72-9490-a893-4735-f00b15f702ec" prefix="oer:http://oerschema.org/ schema:http://schema.org/ dc:http://purl.org/dc/terms/ foaf:http://xmlns.com/foaf/0.1/ cc:http://creativecommons.org/ns# bib:http://bib.schema.org ">
+        alt="Penurunan Produksi" resource="#81619a72-9490-a893-4735-f00b15f702ec"
+        prefix="oer:http://oerschema.org/ schema:http://schema.org/ dc:http://purl.org/dc/terms/ foaf:http://xmlns.com/foaf/0.1/ cc:http://creativecommons.org/ns# bib:http://bib.schema.org ">
         <span slot="question">
           Bagaimana cara mengidentifikasi tulang kecil dan potensial masalah dalam diagram
-        tulang ikan?
+          tulang ikan?
         </span>
         <span>
           Tanyakan “Mengapa ?” sampai saat pertanyaan itu tidak bisa dijawab lagi.
-         Kalau sudah sampai ke situ sebab pokok telah terindentifikasi.
+          Kalau sudah sampai ke situ sebab pokok telah terindentifikasi.
         </span>
       </self-check>
 
@@ -881,9 +935,10 @@ accent-color=" grey" size="wide" offset="none"></media-image>
 
 
 
-      <stop-note accent-color="grey" icon="stopnoteicons:confirm-icon"
-      status="stop" message="bWaktunya Diskusi" title="">
-        <p slot="message"><strong>Cari sebab hingga tidak ada jawaban</strong>. Bagaimana peran biometrik (sidik jari, wajah, suara) dalam meningkatkan keamanan transaksi perbankan? 
+      <stop-note accent-color="grey" icon="stopnoteicons:confirm-icon" status="stop" message="bWaktunya Diskusi"
+        title="">
+        <p slot="message"><strong>Cari sebab hingga tidak ada jawaban</strong>. Bagaimana peran biometrik (sidik jari,
+          wajah, suara) dalam meningkatkan keamanan transaksi perbankan?
         </p>
       </stop-note>
 
@@ -926,118 +981,128 @@ accent-color=" grey" size="wide" offset="none"></media-image>
 
       <h5>Contoh Kasus Kehilangan Barang di Toko. Tingginya tingkat kehilangan barang di suatu lokasi.</h5>
 
-      <media-image source="./files/barang-hilang-diagram.jpg" card="" citation="Aksi Skimming" accent-color="grey" size="wide"
-      offset="none"></media-image>
-      
-    
-<ul>
-  Memahami Diagram
+      <media-image source="./files/barang-hilang-diagram.jpg" card="" citation="Aksi Skimming" accent-color="grey"
+        size="wide" offset="none"></media-image>
 
-  Diagram tulang ikan membagi penyebab masalah menjadi beberapa kategori utama:
-</ul>
-  <li>
-    Alat: Masalah terkait dengan peralatan yang digunakan, seperti tidak adanya alat deteksi logam atau kurangnya alat pemeriksaan tubuh.
-    
-  </li>    
-  <li>
-    Cara: Masalah terkait dengan prosedur atau metode yang digunakan, seperti tidak adanya pengecekan tubuh secara menyeluruh atau SOP yang tidak ditaati.
-    
-  </li>    
-  <li>
-    Orang: Masalah terkait dengan faktor manusia, seperti jumlah petugas keamanan yang kurang, petugas yang tidak teliti, atau karyawan yang membawa barang terlalu banyak.
-    
-  </li>    
-  <li>
-    Lingkungan: Masalah terkait dengan kondisi lingkungan, seperti area yang terlalu luas atau kurangnya pencahayaan.
-    
-  </li>    
-  <li>
 
-    Bahan: Masalah terkait dengan bahan yang dibawa, seperti barang-barang berukuran kecil yang sulit terdeteksi.
-  </li>
-      
+      <ul>
+        Memahami Diagram
+
+        Diagram tulang ikan membagi penyebab masalah menjadi beberapa kategori utama:
+      </ul>
+      <li>
+        Alat: Masalah terkait dengan peralatan yang digunakan, seperti tidak adanya alat deteksi logam atau kurangnya
+        alat pemeriksaan tubuh.
+
+      </li>
+      <li>
+        Cara: Masalah terkait dengan prosedur atau metode yang digunakan, seperti tidak adanya pengecekan tubuh secara
+        menyeluruh atau SOP yang tidak ditaati.
+
+      </li>
+      <li>
+        Orang: Masalah terkait dengan faktor manusia, seperti jumlah petugas keamanan yang kurang, petugas yang tidak
+        teliti, atau karyawan yang membawa barang terlalu banyak.
+
+      </li>
+      <li>
+        Lingkungan: Masalah terkait dengan kondisi lingkungan, seperti area yang terlalu luas atau kurangnya
+        pencahayaan.
+
+      </li>
+      <li>
+
+        Bahan: Masalah terkait dengan bahan yang dibawa, seperti barang-barang berukuran kecil yang sulit terdeteksi.
+      </li>
+
 
 
       <learning-component accent-color="red" type="assessment" subtitle="TULIS 10-11" title="Assessment"
-      icon="lrn:assessment" data-grid-saved-settings="{}">
+        icon="lrn:assessment" data-grid-saved-settings="{}">
 
-      <li>
-        10. Gambarlah diagram tulang ikan sesuai permasalahan Temanmu yang kamu lihat!</p>
-      </li>
-      <li>
-        11. Bagaimana cara mengevaluasi apakah diagram tulang ikan yang telah dibuat sudah akurat dan lengkap?
-      </li>
-    </learning-component>
-  </div>
-
-
-<div slot="content-11">
-
-  <h5>Contoh Kasus Keamanan Jaringan Internet</h5>
-
-  <media-image source="./files/jaringan.PNG" card="" citation="Peluang Keamanan Jaringan" accent-color="grey" size="wide"
-  offset="none"></media-image>
-  <h5>
-
-    Solusi yang dapat dipertimbangkan untuk meningkatkan keamanan jaringan adalah:
-  </h5>
-<ul>
-  <li>
-    
-  </li>
-  <li>
-    Memilih metode yang tepat: Lakukan studi banding untuk memilih metode yang paling sesuai dengan kebutuhan dan kondisi jaringan.
-  
-  </li>
-  <li>
-    Melakukan identifikasi secara berkala: Lakukan analisis data jaringan secara rutin untuk mengidentifikasi potensi ancaman baru.
-   
-  </li>
-  <li>
-    Melakukan pengujian secara rutin: Lakukan pengujian penetrasi atau vulnerability assessment secara berkala untuk menguji tingkat keamanan jaringan.
-    
-  </li>
-  <li>
-    Memilih perangkat yang memiliki fitur keamanan yang baik: Pertimbangkan untuk menggunakan perangkat yang memiliki sertifikasi keamanan.
-    
-  </li>
-  <li>
-    Melakukan konfigurasi yang benar: Pastikan semua perangkat dikonfigurasi dengan benar untuk memaksimalkan fitur keamanan.
-  
-    
-  </li>
-  <li>
-    Melakukan pelatihan kepada personel: Latih personel IT agar memahami pentingnya keamanan jaringan dan cara mengoperasikan sistem keamanan.
-  </li>
-</ul>
+        <li>
+          10. Gambarlah diagram tulang ikan sesuai permasalahan Temanmu yang kamu lihat!</p>
+        </li>
+        <li>
+          11. Bagaimana cara mengevaluasi apakah diagram tulang ikan yang telah dibuat sudah akurat dan lengkap?
+        </li>
+      </learning-component>
+    </div>
 
 
-<learning-component accent-color="red" type="assessment" subtitle="TULIS 12" title="Assessment"
-icon="lrn:assessment" data-grid-saved-settings="{}">
-<p>Siswa membaca hasil kerjanya  tentang cara menyelesaikan masalah.</p>
-<p>Tuliskan apa kamu setuju dengan jawaban temanmu beserta alasannya!</p>
-</learning-component>
+    <div slot="content-11">
 
-</div>
+      <h5>Contoh Kasus Keamanan Jaringan Internet</h5>
 
-<div slot="content-12">
+      <media-image source="./files/jaringan.PNG" card="" citation="Peluang Keamanan Jaringan" accent-color="grey"
+        size="wide" offset="none"></media-image>
+      <h5>
 
-<h4>Siswa untuk merefleksikan proses pembelajaran dan hasil yang diperoleh.</h4>
+        Solusi yang dapat dipertimbangkan untuk meningkatkan keamanan jaringan adalah:
+      </h5>
+      <ul>
+        <li>
 
-  <learning-component
-  type="reflect" accent-color="amber" subtitle="Tulis 13-14" title="REFLEKSI" icon="courseicons:strategy">
-    <p>Pada akhir pelajaran tentang diagram tulang ikan Anda sudah dapat menyelesaikan
-      masalah sehari-hari secara efektif dan efisien.</p>
-      <p>13. Bagaimana pengalaman ini dapat membantu Anda dalam menyelesaikan masalah di kehidupan sehari-hari?
-      </p>
+        </li>
+        <li>
+          Memilih metode yang tepat: Lakukan studi banding untuk memilih metode yang paling sesuai dengan kebutuhan dan
+          kondisi jaringan.
+
+        </li>
+        <li>
+          Melakukan identifikasi secara berkala: Lakukan analisis data jaringan secara rutin untuk mengidentifikasi
+          potensi ancaman baru.
+
+        </li>
+        <li>
+          Melakukan pengujian secara rutin: Lakukan pengujian penetrasi atau vulnerability assessment secara berkala
+          untuk menguji tingkat keamanan jaringan.
+
+        </li>
+        <li>
+          Memilih perangkat yang memiliki fitur keamanan yang baik: Pertimbangkan untuk menggunakan perangkat yang
+          memiliki sertifikasi keamanan.
+
+        </li>
+        <li>
+          Melakukan konfigurasi yang benar: Pastikan semua perangkat dikonfigurasi dengan benar untuk memaksimalkan
+          fitur keamanan.
+
+
+        </li>
+        <li>
+          Melakukan pelatihan kepada personel: Latih personel IT agar memahami pentingnya keamanan jaringan dan cara
+          mengoperasikan sistem keamanan.
+        </li>
+      </ul>
+
+
+      <learning-component accent-color="red" type="assessment" subtitle="TULIS 12" title="Assessment"
+        icon="lrn:assessment" data-grid-saved-settings="{}">
+        <p>Siswa membaca hasil kerjanya tentang cara menyelesaikan masalah.</p>
+        <p>Tuliskan apa kamu setuju dengan jawaban temanmu beserta alasannya!</p>
+      </learning-component>
+
+    </div>
+
+    <div slot="content-12">
+
+      <h4>Siswa untuk merefleksikan proses pembelajaran dan hasil yang diperoleh.</h4>
+
+      <learning-component type="reflect" accent-color="amber" subtitle="Tulis 13-14" title="REFLEKSI"
+        icon="courseicons:strategy">
+        <p>Pada akhir pelajaran tentang diagram tulang ikan Anda sudah dapat menyelesaikan
+          masalah sehari-hari secara efektif dan efisien.</p>
+        <p>13. Bagaimana pengalaman ini dapat membantu Anda dalam menyelesaikan masalah di kehidupan sehari-hari?
+        </p>
         <p>14. Tuliskan kesimpulan dari penyampaian materi hari ini
         </p>
 
-    </learning-component>
+      </learning-component>
 
-  
 
-</div>
+
+    </div>
   </enhanced-pause-component>
 
 
@@ -1045,20 +1110,22 @@ icon="lrn:assessment" data-grid-saved-settings="{}">
     <div id="haxcmsoutdatedfallbacksuperold">
       <iframe id="outline" style="width:18%;float:left;height:90vh;padding:0;margin:0;" name="outline" id="frame1"
         src="legacy-outline.html" loading="lazy"></iframe>
-      <iframe id="content" style="width:80%;float:left;height:90vh;padding:0;margin:0;" name="content" id="frame2" src="" loading="lazy"></iframe>
+      <iframe id="content" style="width:80%;float:left;height:90vh;padding:0;margin:0;" name="content" id="frame2"
+        src="" loading="lazy"></iframe>
       <div class="use-modern-browser">Please use a modern browser to
         view our website correctly. <a href="http://outdatedbrowser.com/">Update my browser now</a></div>
     </div>
   </div>
-  
+
   <script type="module" src="./src/pausev5.js"></script>
 
 
   <script>
     globalThis.MicroFrontendRegistryConfig = globalThis.MicroFrontendRegistryConfig || {};
-    globalThis.HAXCMSContext="php";document.body.removeAttribute('no-js');globalThis.__appCDN="./";globalThis.__appForceUpgrade=false;</script>
+    globalThis.HAXCMSContext = "php"; document.body.removeAttribute('no-js'); globalThis.__appCDN = "./"; globalThis.__appForceUpgrade = false;</script>
   <script src="./build-haxcms.js"></script>
   <script src="./build.js"></script>
   <!-- <script type="module" src="./custom/src/pause.js"></script> -->
 </body>
+
 </html>

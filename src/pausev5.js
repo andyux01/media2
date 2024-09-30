@@ -8,39 +8,38 @@ import { DDDSuper } from "@haxtheweb/d-d-d/d-d-d.js";
 export class appTodo extends DDDSuper(LitElement) {
 
 
-static get tag() {
-  return "enhanced-pause-component";
-}
+  static get tag() {
+    return "enhanced-pause-component";
+  }
 
-constructor() {
-  super();
-  this.visibleContent = 1;
-  this.showButtons = true;
-  this.showAllOption = false;
-  this.labels = ["Content 1", "Content 2", "Content 3", "Content 4", "Content 5", "Content 6", "Content 7", "Content 8", "Content 9", "Content 10", "Content 11", "Content 12", "Content 13"];
-}
+  constructor() {
+    super();
+    this.visibleContent = 1;
+    this.showButtons = true;
+    this.showAllOption = false;
+    this.labels = ["Content 1", "Content 2", "Content 3", "Content 4", "Content 5", "Content 6", "Content 7", "Content 8", "Content 9", "Content 10", "Content 11", "Content 12", "Content 13"];
+  }
 
-static get properties() {
-  return {
-    visibleContent: { type: Number },
-    showButtons: { type: Boolean },
-    showAllOption: { type: Boolean },
-    labels: { type: Array },
-  };
-}
+  static get properties() {
+    return {
+      visibleContent: { type: Number },
+      showButtons: { type: Boolean },
+      showAllOption: { type: Boolean },
+      labels: { type: Array },
+    };
+  }
 
-static get styles() {
-  return [super.styles,
-  css`
+  static get styles() {
+    return [super.styles,
+    css`
     :host {
       display: block;
-      min-height: 100%;
-      max-width: 600px;
-      margin: 0 auto;
+      min-height: 0;
+      /* max-width: 600px; */
+      margin: auto;
       color: var(--ddd-theme-primary);
       background-color: var(
         --simple-colors-default-theme-indigo-3
-        /* --ddd-theme-default-linkLight */
       );
       font-family: var(--ddd-font-navigation);
       font-size: var(--app-todo-font-size, var(--ddd-font-size-s));
@@ -116,7 +115,7 @@ static get styles() {
       background-color: #dbeeb7;
     }
   `];
-}
+  }
 
 
   render() {
@@ -159,7 +158,7 @@ static get styles() {
     if (this.visibleContent < this.labels.length) {
       this.visibleContent++;
     } else {
-      this.visibleContent = 13;
+      this.visibleContent = 12;
       this.showButtons = false;
     }
   }
