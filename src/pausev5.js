@@ -35,7 +35,7 @@ export class EnhancedPauseComponent extends LitElement {
       .wrapper {
         margin: 16px;
         padding: 16px;
-        background-color: #f0f0f0;
+        /* background-color: #f0f0f0; */
       }
       .content {
         max-height: 0;
