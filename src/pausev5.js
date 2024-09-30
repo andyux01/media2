@@ -1,10 +1,8 @@
 import { LitElement, html, css } from "https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js";
 
 // Jika DDDSuper tidak tersedia, kita akan menggunakan LitElement langsung
-import { DDDSuper } from "@haxtheweb/d-d-d/d-d-d.js";
 
-export class EnhancedPauseComponent extends DDDSuper(LitElement) {
-// LitElement {
+export class EnhancedPauseComponent extends LitElement {
   static get properties() {
     return {
       visibleContent: { type: Number },
@@ -32,18 +30,12 @@ export class EnhancedPauseComponent extends DDDSuper(LitElement) {
     return css`
       :host {
         display: block;
-        margin: auto;
-        color: var(--ddd-theme-primary);
-        /* background-color: var( */
-          /* --simple-colors-default-theme-indigo-3; */
-          /* --ddd-theme-default-linkLight */
-        
-        font-family: var(--ddd-font-navigation);
-        font-size: var(--app-todo-font-size, var(--ddd-font-size-s));
+        font-family: Arial, sans-serif;
       }
       .wrapper {
-        margin: var(--ddd-spacing-2);
-        padding: var(--ddd-spacing-4);
+        margin: 16px;
+        padding: 16px;
+        background-color: #f0f0f0;
       }
       .content {
         max-height: 0;
